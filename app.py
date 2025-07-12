@@ -17,7 +17,9 @@ logger = logging.getLogger(__name__)
 
 # Load model and resources
 try:
-    model = tf.keras.models.load_model("emotion_model.h5")
+    # Try loading with compile=False first to avoid optimizer issues
+    model = tf.keras.models.load_model("emotion_model.h5", compile=False)
+    model.compile(optimizer='adam', loss='categorical_crossentropy')  # Recompile with simple optimizer
     EMOTIONS = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     logger.info("Model and resources loaded successfully")
@@ -40,9 +42,12 @@ def validate_image(image_bytes):
         logger.error(f"Image validation error: {str(e)}")
         raise ValueError("Invalid image format")
 
+@app.route("/")
+def home():
+    return render_template("index.html")
+
 @app.route("/predict", methods=["POST"])
 def predict():
-    return render_template("index.html")
     try:
         # Validate request
         if not request.is_json:
