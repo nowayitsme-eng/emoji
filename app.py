@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import tensorflow as tf
 import numpy as np
@@ -42,6 +42,7 @@ def validate_image(image_bytes):
 
 @app.route("/predict", methods=["POST"])
 def predict():
+    return render_template("index.html")
     try:
         # Validate request
         if not request.is_json:
