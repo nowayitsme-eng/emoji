@@ -31,6 +31,7 @@ _________________________________________________________________
  dense (Dense)               (None, 7)                 903       
                                                                  
 =================================================================
+
 Total params: 38,343
 Trainable params: 38,279
 Non-trainable params: 64
@@ -38,14 +39,9 @@ Training Details
 Dataset: FER-2013 (35,887 grayscale 48x48 images)
 
 Augmentation:
+ImageDataGenerator(rotation_range=15,zoom_range=0.1,horizontal_flip=True,brightness_range=[0.9,1.1])
 
-python
-ImageDataGenerator(rotation_range=15,
-                  zoom_range=0.1,
-                  horizontal_flip=True,
-                  brightness_range=[0.9,1.1])
 Optimization:
-
 Adam optimizer (lr=0.001)
 
 Class weights for imbalance (Disgust: 10x weight)
@@ -56,7 +52,9 @@ Metric	Value
 Val Accuracy	68.2%
 Inference Speed	120ms
 Model Size	8.4MB
+
 🌐 Web Implementation
+
 Tech Stack
 Frontend: Vanilla JS + Canvas API
 
@@ -65,29 +63,26 @@ Backend: Flask (Python)
 Deployment: Dockerized on Render
 
 Key Features
-Real-time camera emotion detection
+1. Real-time camera emotion detection
 
-Image upload processing
+2. Image upload processing
 
-Confidence visualization
+3. Confidence visualization
 
-Mobile-responsive design
+4. Mobile-responsive design
 
 🚀 Deployment
 Local Setup
 
-bash
-git clone https://github.com/your-repo/emoji.git
+git clone https://github.com/nowayitsme-eng/emoji.git
 cd emoji
 pip install -r requirements.txt
 python app.py
 Docker Build
-
-bash
 docker build -t emotion-app .
 docker run -p 5000:5000 emotion-app
+
 📂 Project Structure
-text
 emotion-detection/
 ├── app.py                # Flask application
 ├── emotion_model.h5      # Trained model
@@ -95,9 +90,11 @@ emotion-detection/
 ├── templates/            # HTML files
 ├── requirements.txt      # Python dependencies
 └── Dockerfile            # Container configuration
+
 📈 Performance Comparison
 Model	Accuracy	Size	Speed
-Our CNN	68.2%	8.4MB	120ms
-Mini-Xception	72.1%	22MB	210ms
+Our CNN:	68.2%	8.4MB	120ms
+Mini-Xception:	72.1%	22MB	210ms
+
 🤝 Contributing
 PRs welcome! Please open an issue first to discuss changes.
