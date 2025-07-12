@@ -9,6 +9,7 @@ A real-time emotion classification system trained on FER-2013 dataset, deployed 
 ## 🧠 AI/ML Implementation
 
 ### Model Architecture
+```python
 Model: "sequential"
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
