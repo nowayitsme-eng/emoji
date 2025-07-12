@@ -41,7 +41,7 @@ Dataset: FER-2013 (35,887 grayscale 48x48 images)
 
 Augmentation:
 ImageDataGenerator(rotation_range=15,zoom_range=0.1,horizontal_flip=True,brightness_range=[0.9,1.1])
-
+```python
 Optimization:
 Adam optimizer (lr=0.001)
 
