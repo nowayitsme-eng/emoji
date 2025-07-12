@@ -6,7 +6,6 @@
 
 A real-time emotion classification system trained on FER-2013 dataset, deployed as a web application.
 
-![Demo GIF](docs/demo.gif) *(Add your demo GIF here)*
 
 ## 🧠 AI/ML Implementation
 
