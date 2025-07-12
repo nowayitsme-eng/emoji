@@ -727,7 +727,7 @@
                         const controller = new AbortController();
                         const timeout = setTimeout(() => controller.abort(), 10000); // 10 seconds
 
-                        const response = await fetch("http://localhost:5000/predict", {
+                        const response = await fetch("/predict", {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({ image: base64Image }),
