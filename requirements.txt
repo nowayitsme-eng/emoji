@@ -1,6 +1,6 @@
 Flask==2.3.2
 flask-cors==3.0.10
-tensorflow-cpu==2.10.0  # Lighter CPU-only version
+tensorflow-cpu==2.10.0
 numpy==1.23.5
 Pillow==9.5.0
 gunicorn==20.1.0
